@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: game-demo
+data:
+  url: "google.com"
+  os_name: "chanu-os"
+
+--- ## So in this below example we will extract all key & values from that Config Map
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+    - name: redhat
+      image: redhat/ubi9
+      command: ["/bin/bash","-c","env"]
+      envFrom:
+        - configMapRef:
+            name: game-demo
+
+--- ## Here let's say u want only some of keys and their respected values u can use something like below
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+    - name: redhat
+      image: redhat/ubi9
+      command: ["/bin/bash","-c","env"]
+      env:
+        - name: OS_NAME
+          valueFrom:
+            configMapKeyRef:
+              key: os_name
+              name: game-demo
