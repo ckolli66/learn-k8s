@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: jobs-example
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: nginx
+          image: nginx
+          command: ["sleep","3600"]
+  backoffLimit: 4
