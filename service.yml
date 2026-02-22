@@ -17,8 +17,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: frontend
   name: service-demo
 spec:
   selector:
@@ -35,8 +33,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: frontend
   name: service-demo-np
 spec:
   type: NodePort
@@ -52,8 +48,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: frontend
   name: service-demo-lb
 spec:
   type: LoadBalancer
