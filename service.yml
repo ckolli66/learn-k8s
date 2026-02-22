@@ -12,6 +12,22 @@ spec:
       ports:
         - containerPort: 80
 
+---
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pod-2
+  labels:
+    app: frontend
+spec:
+  containers:
+    - name: service-demo
+      image: nginx
+      ports:
+        - containerPort: 80
+
 --- ## ClusterIP (default):
 ## Provides an internal virtual IP that load balances traffic to Pods across the cluster.
 ## Accessible only within the cluster.
