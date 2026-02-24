@@ -73,7 +73,7 @@ data:
 apiVersion: v1
 kind: Service
 metadata:
-  name: Frontend
+  name: frontend
 spec:
   type: LoadBalancer
   selector:
@@ -152,6 +152,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: frontend
   labels:
     app: frontend
     project: robot-shop
@@ -177,6 +178,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: catalogue
   labels:
     app: catalogue
     project: robot-shop
@@ -202,6 +204,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: cart
   labels:
     app: cart
     project: robot-shop
@@ -227,6 +230,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: user
   labels:
     app: user
     project: robot-shop
@@ -252,6 +256,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: shipping
   labels:
     app: shipping
     project: robot-shop
@@ -277,6 +282,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: payment
   labels:
     app: payment
     project: robot-shop
